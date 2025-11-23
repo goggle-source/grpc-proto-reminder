@@ -1,4 +1,4 @@
-module github.com/goggle-source/grpc-proto-servic-reminder
+module github.com/goggle-source/grpc-proto-reminder
 
 go 1.24.2
 
