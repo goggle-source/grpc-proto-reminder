@@ -4,7 +4,7 @@
 // 	protoc        v6.33.0--rc1
 // source: remind.proto
 
-package remv1
+package generated
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -481,7 +481,7 @@ const file_remind_proto_rawDesc = "" +
 	"\x06Create\x12\x17.reminder.CreateRequest\x1a\x18.reminder.CreateResponse\x122\n" +
 	"\x03Get\x12\x14.reminder.GetRequest\x1a\x15.reminder.GetResponse\x12;\n" +
 	"\x06Update\x12\x17.reminder.UpdateRequest\x1a\x18.reminder.UpdateResponse\x12;\n" +
-	"\x06Delete\x12\x17.reminder.DeleteRequest\x1a\x18.reminder.DeleteResponseB\x0eZ\frem.v1;remv1b\x06proto3"
+	"\x06Delete\x12\x17.reminder.DeleteRequest\x1a\x18.reminder.DeleteResponseB8Z6github.com/goggle-source/grpc-proto-reminder/generatedb\x06proto3"
 
 var (
 	file_remind_proto_rawDescOnce sync.Once
