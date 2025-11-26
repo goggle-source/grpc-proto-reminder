@@ -19,10 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	Reminder_Create_FullMethodName = "/reminder.Reminder/Create"
-	Reminder_Get_FullMethodName    = "/reminder.Reminder/Get"
-	Reminder_Update_FullMethodName = "/reminder.Reminder/Update"
-	Reminder_Delete_FullMethodName = "/reminder.Reminder/Delete"
+	Reminder_Create_FullMethodName = "/generated.Reminder/Create"
+	Reminder_Get_FullMethodName    = "/generated.Reminder/Get"
+	Reminder_Update_FullMethodName = "/generated.Reminder/Update"
+	Reminder_Delete_FullMethodName = "/generated.Reminder/Delete"
 )
 
 // ReminderClient is the client API for Reminder service.
@@ -210,7 +210,7 @@ func _Reminder_Delete_Handler(srv interface{}, ctx context.Context, dec func(int
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Reminder_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "reminder.Reminder",
+	ServiceName: "generated.Reminder",
 	HandlerType: (*ReminderServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

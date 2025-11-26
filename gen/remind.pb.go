@@ -450,7 +450,7 @@ var File_remind_proto protoreflect.FileDescriptor
 
 const file_remind_proto_rawDesc = "" +
 	"\n" +
-	"\fremind.proto\x12\breminder\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8a\x01\n" +
+	"\fremind.proto\x12\tgenerated\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8a\x01\n" +
 	"\rCreateRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x128\n" +
 	"\ttimestamp\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\x12+\n" +
@@ -476,12 +476,12 @@ const file_remind_proto_rawDesc = "" +
 	"\x11notification_type\x18\x04 \x03(\tR\x10notificationType\"\x1f\n" +
 	"\rDeleteRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\"\x10\n" +
-	"\x0eDeleteResponse2\xf5\x01\n" +
-	"\bReminder\x12;\n" +
-	"\x06Create\x12\x17.reminder.CreateRequest\x1a\x18.reminder.CreateResponse\x122\n" +
-	"\x03Get\x12\x14.reminder.GetRequest\x1a\x15.reminder.GetResponse\x12;\n" +
-	"\x06Update\x12\x17.reminder.UpdateRequest\x1a\x18.reminder.UpdateResponse\x12;\n" +
-	"\x06Delete\x12\x17.reminder.DeleteRequest\x1a\x18.reminder.DeleteResponseB8Z6github.com/goggle-source/grpc-proto-reminder/generatedb\x06proto3"
+	"\x0eDeleteResponse2\xfd\x01\n" +
+	"\bReminder\x12=\n" +
+	"\x06Create\x12\x18.generated.CreateRequest\x1a\x19.generated.CreateResponse\x124\n" +
+	"\x03Get\x12\x15.generated.GetRequest\x1a\x16.generated.GetResponse\x12=\n" +
+	"\x06Update\x12\x18.generated.UpdateRequest\x1a\x19.generated.UpdateResponse\x12=\n" +
+	"\x06Delete\x12\x18.generated.DeleteRequest\x1a\x19.generated.DeleteResponseBBZ@github.com/goggle-source/grpc-proto-reminder/generated;generatedb\x06proto3"
 
 var (
 	file_remind_proto_rawDescOnce sync.Once
@@ -497,29 +497,29 @@ func file_remind_proto_rawDescGZIP() []byte {
 
 var file_remind_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_remind_proto_goTypes = []any{
-	(*CreateRequest)(nil),         // 0: reminder.CreateRequest
-	(*CreateResponse)(nil),        // 1: reminder.CreateResponse
-	(*GetRequest)(nil),            // 2: reminder.GetRequest
-	(*GetResponse)(nil),           // 3: reminder.GetResponse
-	(*UpdateRequest)(nil),         // 4: reminder.UpdateRequest
-	(*UpdateResponse)(nil),        // 5: reminder.UpdateResponse
-	(*DeleteRequest)(nil),         // 6: reminder.DeleteRequest
-	(*DeleteResponse)(nil),        // 7: reminder.DeleteResponse
+	(*CreateRequest)(nil),         // 0: generated.CreateRequest
+	(*CreateResponse)(nil),        // 1: generated.CreateResponse
+	(*GetRequest)(nil),            // 2: generated.GetRequest
+	(*GetResponse)(nil),           // 3: generated.GetResponse
+	(*UpdateRequest)(nil),         // 4: generated.UpdateRequest
+	(*UpdateResponse)(nil),        // 5: generated.UpdateResponse
+	(*DeleteRequest)(nil),         // 6: generated.DeleteRequest
+	(*DeleteResponse)(nil),        // 7: generated.DeleteResponse
 	(*timestamppb.Timestamp)(nil), // 8: google.protobuf.Timestamp
 }
 var file_remind_proto_depIdxs = []int32{
-	8, // 0: reminder.CreateRequest.timestamp:type_name -> google.protobuf.Timestamp
-	8, // 1: reminder.GetResponse.timestamp:type_name -> google.protobuf.Timestamp
-	8, // 2: reminder.UpdateRequest.timestamp:type_name -> google.protobuf.Timestamp
-	8, // 3: reminder.UpdateResponse.timestamp:type_name -> google.protobuf.Timestamp
-	0, // 4: reminder.Reminder.Create:input_type -> reminder.CreateRequest
-	2, // 5: reminder.Reminder.Get:input_type -> reminder.GetRequest
-	4, // 6: reminder.Reminder.Update:input_type -> reminder.UpdateRequest
-	6, // 7: reminder.Reminder.Delete:input_type -> reminder.DeleteRequest
-	1, // 8: reminder.Reminder.Create:output_type -> reminder.CreateResponse
-	3, // 9: reminder.Reminder.Get:output_type -> reminder.GetResponse
-	5, // 10: reminder.Reminder.Update:output_type -> reminder.UpdateResponse
-	7, // 11: reminder.Reminder.Delete:output_type -> reminder.DeleteResponse
+	8, // 0: generated.CreateRequest.timestamp:type_name -> google.protobuf.Timestamp
+	8, // 1: generated.GetResponse.timestamp:type_name -> google.protobuf.Timestamp
+	8, // 2: generated.UpdateRequest.timestamp:type_name -> google.protobuf.Timestamp
+	8, // 3: generated.UpdateResponse.timestamp:type_name -> google.protobuf.Timestamp
+	0, // 4: generated.Reminder.Create:input_type -> generated.CreateRequest
+	2, // 5: generated.Reminder.Get:input_type -> generated.GetRequest
+	4, // 6: generated.Reminder.Update:input_type -> generated.UpdateRequest
+	6, // 7: generated.Reminder.Delete:input_type -> generated.DeleteRequest
+	1, // 8: generated.Reminder.Create:output_type -> generated.CreateResponse
+	3, // 9: generated.Reminder.Get:output_type -> generated.GetResponse
+	5, // 10: generated.Reminder.Update:output_type -> generated.UpdateResponse
+	7, // 11: generated.Reminder.Delete:output_type -> generated.DeleteResponse
 	8, // [8:12] is the sub-list for method output_type
 	4, // [4:8] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name
