@@ -27,7 +27,8 @@ type CreateRequest struct {
 	Name             string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	Description      string                 `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
 	Timestamp        *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
-	NotificationType []string               `protobuf:"bytes,4,rep,name=notification_type,json=notificationType,proto3" json:"notification_type,omitempty"`
+	Weekday          []string               `protobuf:"bytes,4,rep,name=weekday,proto3" json:"weekday,omitempty"`
+	NotificationType []string               `protobuf:"bytes,5,rep,name=notification_type,json=notificationType,proto3" json:"notification_type,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -79,6 +80,13 @@ func (x *CreateRequest) GetDescription() string {
 func (x *CreateRequest) GetTimestamp() *timestamppb.Timestamp {
 	if x != nil {
 		return x.Timestamp
+	}
+	return nil
+}
+
+func (x *CreateRequest) GetWeekday() []string {
+	if x != nil {
+		return x.Weekday
 	}
 	return nil
 }
@@ -183,7 +191,8 @@ type GetResponse struct {
 	Name             string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	Description      string                 `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
 	Timestamp        *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
-	NotificationType []string               `protobuf:"bytes,4,rep,name=notification_type,json=notificationType,proto3" json:"notification_type,omitempty"`
+	Weekday          []string               `protobuf:"bytes,4,rep,name=weekday,proto3" json:"weekday,omitempty"`
+	NotificationType []string               `protobuf:"bytes,5,rep,name=notification_type,json=notificationType,proto3" json:"notification_type,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -239,6 +248,13 @@ func (x *GetResponse) GetTimestamp() *timestamppb.Timestamp {
 	return nil
 }
 
+func (x *GetResponse) GetWeekday() []string {
+	if x != nil {
+		return x.Weekday
+	}
+	return nil
+}
+
 func (x *GetResponse) GetNotificationType() []string {
 	if x != nil {
 		return x.NotificationType
@@ -251,8 +267,9 @@ type UpdateRequest struct {
 	Id               int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name             string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Description      string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Timestamp        *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
-	NotificationType []string               `protobuf:"bytes,5,rep,name=notification_type,json=notificationType,proto3" json:"notification_type,omitempty"`
+	Weekday          []string               `protobuf:"bytes,4,rep,name=weekday,proto3" json:"weekday,omitempty"`
+	Timestamp        *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	NotificationType []string               `protobuf:"bytes,6,rep,name=notification_type,json=notificationType,proto3" json:"notification_type,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -308,6 +325,13 @@ func (x *UpdateRequest) GetDescription() string {
 	return ""
 }
 
+func (x *UpdateRequest) GetWeekday() []string {
+	if x != nil {
+		return x.Weekday
+	}
+	return nil
+}
+
 func (x *UpdateRequest) GetTimestamp() *timestamppb.Timestamp {
 	if x != nil {
 		return x.Timestamp
@@ -327,8 +351,9 @@ type UpdateResponse struct {
 	Id               int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name             string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Description      string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Timestamp        *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
-	NotificationType []string               `protobuf:"bytes,5,rep,name=notification_type,json=notificationType,proto3" json:"notification_type,omitempty"`
+	Weekday          []string               `protobuf:"bytes,4,rep,name=weekday,proto3" json:"weekday,omitempty"`
+	Timestamp        *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	NotificationType []string               `protobuf:"bytes,6,rep,name=notification_type,json=notificationType,proto3" json:"notification_type,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -382,6 +407,13 @@ func (x *UpdateResponse) GetDescription() string {
 		return x.Description
 	}
 	return ""
+}
+
+func (x *UpdateResponse) GetWeekday() []string {
+	if x != nil {
+		return x.Weekday
+	}
+	return nil
 }
 
 func (x *UpdateResponse) GetTimestamp() *timestamppb.Timestamp {
@@ -482,34 +514,38 @@ var File_remind_proto protoreflect.FileDescriptor
 
 const file_remind_proto_rawDesc = "" +
 	"\n" +
-	"\fremind.proto\x12\breminder\x1a\x1fgoogle/protobuf/timestamp.proto\"\xac\x01\n" +
+	"\fremind.proto\x12\breminder\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc6\x01\n" +
 	"\rCreateRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12 \n" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\x128\n" +
-	"\ttimestamp\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\x12+\n" +
-	"\x11notification_type\x18\x04 \x03(\tR\x10notificationType\" \n" +
+	"\ttimestamp\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\x12\x18\n" +
+	"\aweekday\x18\x04 \x03(\tR\aweekday\x12+\n" +
+	"\x11notification_type\x18\x05 \x03(\tR\x10notificationType\" \n" +
 	"\x0eCreateResponse\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\"\x1c\n" +
 	"\n" +
 	"GetRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\x03R\x02id\"\xaa\x01\n" +
+	"\x02id\x18\x01 \x01(\x03R\x02id\"\xc4\x01\n" +
 	"\vGetResponse\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12 \n" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\x128\n" +
-	"\ttimestamp\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\x12+\n" +
-	"\x11notification_type\x18\x04 \x03(\tR\x10notificationType\"\xbc\x01\n" +
+	"\ttimestamp\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\x12\x18\n" +
+	"\aweekday\x18\x04 \x03(\tR\aweekday\x12+\n" +
+	"\x11notification_type\x18\x05 \x03(\tR\x10notificationType\"\xd6\x01\n" +
 	"\rUpdateRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x128\n" +
-	"\ttimestamp\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\x12+\n" +
-	"\x11notification_type\x18\x05 \x03(\tR\x10notificationType\"\xbd\x01\n" +
+	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x18\n" +
+	"\aweekday\x18\x04 \x03(\tR\aweekday\x128\n" +
+	"\ttimestamp\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\x12+\n" +
+	"\x11notification_type\x18\x06 \x03(\tR\x10notificationType\"\xd7\x01\n" +
 	"\x0eUpdateResponse\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x128\n" +
-	"\ttimestamp\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\x12+\n" +
-	"\x11notification_type\x18\x05 \x03(\tR\x10notificationType\"\x1f\n" +
+	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x18\n" +
+	"\aweekday\x18\x04 \x03(\tR\aweekday\x128\n" +
+	"\ttimestamp\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\x12+\n" +
+	"\x11notification_type\x18\x06 \x03(\tR\x10notificationType\"\x1f\n" +
 	"\rDeleteRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\"\x10\n" +
 	"\x0eDeleteResponse2\xf5\x01\n" +

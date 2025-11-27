@@ -16,12 +16,13 @@ message CreateRequest {
     string name = 1;
     string description = 2;
     google.protobuf.Timestamp timestamp = 3;
-    repeated string notification_type = 4;
-};
+    repeated string weekday = 4;
+    repeated string notification_type = 5;
+}
 
 message CreateResponse {
     int64 id = 1;
-};
+}
 
 message GetRequest {
     int64 id = 1;
@@ -31,23 +32,26 @@ message GetResponse {
     string name = 1;
     string description = 2;
     google.protobuf.Timestamp timestamp = 3;
-    repeated string notification_type = 4;
+    repeated string weekday = 4;
+    repeated string notification_type = 5;
 }
 
 message UpdateRequest {
     int64 id = 1;
     string name = 2;
     string description = 3;
-    google.protobuf.Timestamp timestamp = 4;
-    repeated string notification_type = 5;
+    repeated string weekday = 4;
+    google.protobuf.Timestamp timestamp = 5;
+    repeated string notification_type = 6;
 };
 
 message UpdateResponse {
     int64 id = 1;
     string name = 2;
     string description = 3;
-    google.protobuf.Timestamp timestamp = 4;
-    repeated string notification_type = 5;
+    repeated string weekday = 4;
+    google.protobuf.Timestamp timestamp = 5;
+    repeated string notification_type = 6;
 };
 
 message DeleteRequest {
