@@ -14,8 +14,9 @@ service Reminder {
 
 message CreateRequest {
     string name = 1;
-    google.protobuf.Timestamp timestamp = 2;
-    repeated string notification_type = 3;
+    string description = 2;
+    google.protobuf.Timestamp timestamp = 3;
+    repeated string notification_type = 4;
 };
 
 message CreateResponse {
@@ -28,22 +29,25 @@ message GetRequest {
 
 message GetResponse {
     string name = 1;
-    google.protobuf.Timestamp timestamp = 2;
-    repeated string notification_type = 3;
+    string description = 2;
+    google.protobuf.Timestamp timestamp = 3;
+    repeated string notification_type = 4;
 }
 
 message UpdateRequest {
     int64 id = 1;
     string name = 2;
-    google.protobuf.Timestamp timestamp = 3;
-    repeated string notification_type = 4;
+    string description = 3;
+    google.protobuf.Timestamp timestamp = 4;
+    repeated string notification_type = 5;
 };
 
 message UpdateResponse {
     int64 id = 1;
     string name = 2;
-    google.protobuf.Timestamp timestamp = 3;
-    repeated string notification_type = 4;
+    string description = 3;
+    google.protobuf.Timestamp timestamp = 4;
+    repeated string notification_type = 5;
 };
 
 message DeleteRequest {
