@@ -3,7 +3,7 @@ syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 
 package reminder;
-option go_package = "github.com/goggle-source/grpc-proto-reminder/reminder;reminderv1";
+option go_package = "github.com/goggle-source/grpc-proto-reminder/gen/reminder";
 
 service Reminder {
     rpc Create(CreateRequest) returns (CreateResponse);

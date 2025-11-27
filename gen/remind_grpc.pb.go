@@ -4,7 +4,7 @@
 // - protoc             v6.33.0--rc1
 // source: remind.proto
 
-package reminderv1
+package reminder
 
 import (
 	context "context"
